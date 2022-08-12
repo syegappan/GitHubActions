@@ -42,7 +42,7 @@ jobs:
            git --version
            echo
            echo Is Build tools installed?
-           mvn --verison
+           mvn --version
            gradle --version
            ant -version
           
