@@ -36,10 +36,10 @@ jobs:
            ls -a 
            echo
            echo Is Java installed?
-           Java -version
+           java -version
            echo
            echo Is Git Installed?
-           Git --version
+           git --version
            echo
            echo Is Build tools installed?
            mvn --verison
