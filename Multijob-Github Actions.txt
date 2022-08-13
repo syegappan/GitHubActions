@@ -1,0 +1,86 @@
+# This is a basic workflow to help you get started with Multi job Github Actions
+
+name: Getting started with GitHub Actions
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the "main" branch
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+  
+jobs:
+    # This workflow contains a single job called "build"
+    build-on-windows:
+    # The type of runner that the job will run on
+     runs-on: windows-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+     steps:
+    
+      - name: Step 1 - Log the pre-build disk space
+        run: df
+        
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - name: Step 2 -Check out your main github branch
+        uses: actions/checkout@v3
+        
+      - name: Step 3 - Get the windows execution policy
+        run: |
+            echo Here is the windows execution policy
+            Get-ExecutionPolicy
+            
+      - name: Step 4 - Get the windows environment variables
+        run: df
+
+
+    # This workflow contains a single job called "build"
+    build-on-ubuntu:
+    # The type of runner that the job will run on
+     runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+     steps:
+    
+      - name: Step 1 - Log the pre-build disk space
+        run: df
+        
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - name: Step 2 -Check out your main github branch
+        uses: actions/checkout@v3
+
+      # Runs a single command using the runners shell
+      - name: Step 3 - Run a one-line script
+        run: sh ./github-actions-script.sh
+
+      # Runs a set of commands using the runners shell
+      - name: Step 4 - Run a multi-line script but none in this example
+        run: |
+             ls -a
+          
+      - name: Step 5 - Run post-build disk space
+        run: df
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
