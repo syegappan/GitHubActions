@@ -27,5 +27,5 @@
            echo how is the disk laid out?
            df
            echo
-           echo what env variables are available?
+           echo what env variables ar e available?
            env
